@@ -1,0 +1,3 @@
+/home/anna/Repositories/1C_Task/build/CMakeFiles/main.dir
+/home/anna/Repositories/1C_Task/build/CMakeFiles/edit_cache.dir
+/home/anna/Repositories/1C_Task/build/CMakeFiles/rebuild_cache.dir
