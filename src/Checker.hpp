@@ -32,7 +32,7 @@ public:
     void set_place(Vector_ll &place) 
     { 
         place_ = place; 
-        if (color_ == WHITE && place.get_x() == 7 || color_ == BLACK && place.get_x() == 0) 
+        if ((color_ == WHITE && place.get_x() == 7) || (color_ == BLACK && place.get_x() == 0)) 
             set_state(State::QUEEN); 
     }
     void set_state(State state) { state_ = state; }

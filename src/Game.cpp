@@ -22,8 +22,6 @@ Game::Game(Checker_color& chosen_color)
         size_t start = i % 2 == 0 ? 0 : 1;
         for (size_t j = start; j < 8; j += 2)
         {
-            // Player *owner = (chosen_color == WHITE) ? (Player*)&person_ : (Player*)&bot_;
-
             Checker *white_checker = new Checker(Vector_ll(i, j), WHITE);
             
             chessboard_.set_checker(white_checker, Vector_ll(i, j));
@@ -422,7 +420,7 @@ Checker *Game::check_simple_left(Checker_color desired, Vector_ll from, Vector_l
 
 Checker *Game::check_queen_left_up(Checker_color desired, Vector_ll from, Vector_ll to, Checker *to_eat)
 {
-    if (to.get_y() - from.get_y() == 2)
+    if (std::abs(to.get_y() - from.get_y()) == 2)
     {
         return check_simple_left(desired, from, to, to_eat);
     }
@@ -470,7 +468,7 @@ Checker *Game::check_queen_left_up(Checker_color desired, Vector_ll from, Vector
 
 Checker *Game::check_queen_left_down(Checker_color desired, Vector_ll from, Vector_ll to, Checker *to_eat)
 {
-    if (from.get_y() - to.get_y() == 2)
+    if (std::abs(from.get_y() - to.get_y()) == 2)
     {
         return check_simple_left(desired, to, from, to_eat);
     }
@@ -518,7 +516,7 @@ Checker *Game::check_queen_left_down(Checker_color desired, Vector_ll from, Vect
 
 Checker *Game::check_queen_right_up(Checker_color desired, Vector_ll from, Vector_ll to, Checker *to_eat)
 {
-    if (to.get_x() - from.get_x() == 2)
+    if (std::abs(to.get_x() - from.get_x()) == 2)
     {
         return check_simple_left(desired, from, to, to_eat);
     }
